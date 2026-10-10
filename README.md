@@ -1,2 +1,1 @@
-# who-gets-to-play
-
+# Who gets to play? Interactive lecture

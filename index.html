@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who Gets to Play?</title>
+<meta name="description" content="Physical and conceptual accessibility in videogames. A lecture by Nadia Di Leo, University of Foggia and King’s College London.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect x='3' y='1' width='4' height='14' fill='%23afa0ba'/%3E%3Crect x='8' y='3' width='4' height='12' fill='%23a0b2ba'/%3E%3Crect x='3' y='1' width='4' height='2' fill='%232e2a35'/%3E%3Crect x='8' y='3' width='4' height='2' fill='%232e2a35'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-arrow" viewBox="0 0 10 8"><path d="M0 3H6V0H7V1H8V2H9V3H10V5H9V6H8V7H7V8H6V5H0Z"/></symbol>
+    <symbol id="i-shelf" viewBox="0 0 16 14"><path d="M0 13h16v1H0zM1 2h3v11H1zM5 4h3v9H5zM9 3h2v10H9zM12 6l2-1 2 7-2 1z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 16 18">
+      <path d="M1 0h10v1h1v1h1v1h1v1h1v14H1z" fill="#fbfafc"/>
+      <path d="M1 0h10v1H2v16h12V5h1v13H1zM11 1h1v1h1v1h1v1h1v1h-5zM12 3v1h1V3z" fill="#2e2a35"/>
+      <path d="M4 8h8v6H4z" fill="#a0b2ba"/><path d="M4 12h2v-1h1v-1h1v1h1v1h1v-1h1v1h1v2H4z" fill="#6f6280"/><path d="M10 9h1v1h-1z" fill="#fbfafc"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 16 18">
+      <path d="M1 0h10v1h1v1h1v1h1v1h1v14H1z" fill="#fbfafc"/>
+      <path d="M1 0h10v1H2v16h12V5h1v13H1zM11 1h1v1h1v1h1v1h1v1h-5zM12 3v1h1V3z" fill="#2e2a35"/>
+      <path d="M4 7h8v1H4zM4 9h8v1H4zM4 11h8v1H4zM4 13h5v1H4z" fill="#6f6280"/>
+    </symbol>
+    <symbol id="i-globe" viewBox="0 0 16 18">
+      <path d="M1 1h14v16H1z" fill="#fbfafc"/>
+      <path d="M1 1h14v1H2v14h12V2h1v15H1zM2 4h12v1H2z" fill="#2e2a35"/>
+      <path d="M3 2h1v1H3zM5 2h1v1H5z" fill="#2e2a35"/>
+      <path d="M4 7h8v1H4zM4 9h6v1H4zM4 11h8v1H4zM4 13h4v1H4z" fill="#557080"/>
+    </symbol>
+    <symbol id="i-film" viewBox="0 0 16 18">
+      <path d="M1 2h14v14H1z" fill="#2e2a35"/>
+      <path d="M2 3h1v1H2zM2 6h1v1H2zM2 9h1v1H2zM2 12h1v1H2zM2 14h1v1H2zM13 3h1v1h-1zM13 6h1v1h-1zM13 9h1v1h-1zM13 12h1v1h-1zM13 14h1v1h-1z" fill="#fbfafc"/>
+      <path d="M4 4h8v10H4z" fill="#a0b2ba"/><path d="M7 7h1v1h1v1h1v1H9v1H8v1H7z" fill="#fbfafc"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div id="stage" aria-live="off">
+
+  <!-- ============================== TITLE ============================== -->
+  <section id="scr-title" class="screen is-active" aria-label="Title screen">
+    <div class="case3d-wrap">
+      <div id="title-case" class="case3d" aria-hidden="true">
+        <div class="c3-front">
+          <div class="cover">
+            <p class="cover-band"><span>University of Foggia</span><span>King’s College London</span></p>
+            <div class="cover-art">
+              <img src="assets/deco/cloud.png" alt="" class="px">
+            </div>
+            <h1 class="cover-title"><span class="tt" data-type>WHO GETS</span><span class="tt" data-type>TO PLAY?</span></h1>
+            <p class="cover-sub">Physical and conceptual accessibility in Videogames</p>
+            <p class="cover-author">NADIA DI LEO</p>
+          </div>
+        </div>
+        <div class="c3-spine"><div class="spine-own"><span class="so-num">00</span><span class="so-title">WHO GETS TO PLAY?</span><span class="so-author">DI LEO</span></div></div>
+        <div class="c3-back"></div>
+      </div>
+    </div>
+    <div class="title-cta">
+      <button class="btn btn-start" id="btn-start" type="button"><span class="blink">Press start</span></button>
+      <p class="hint">Enter to start, F for fullscreen</p>
+    </div>
+    <p class="sr-only">Who gets to play? Physical and conceptual accessibility in Videogames. Nadia Di Leo. University of Foggia, King’s College London.</p>
+  </section>
+
+  <!-- ============================== LIBRARY ============================== -->
+  <section id="scr-library" class="screen" aria-label="Lecture library">
+    <header class="lib-head">
+      <h2 class="lib-title">Who gets to play?</h2>
+      <p class="lib-sub">Physical and conceptual accessibility in Videogames</p>
+    </header>
+
+    <div class="lib-scroll">
+      <div class="lib-box">
+        <div class="lib-scene" id="lib-scene">
+          <div class="wall-window" aria-hidden="true">
+            <div class="ww-sky"><img src="assets/deco/cloud.png" alt="" class="px ww-cloud"></div>
+            <div class="ww-frame"></div>
+          </div>
+          <div id="shelf">
+            <div class="plank" aria-hidden="true"></div>
+          </div>
+          <p id="hover-label" class="hover-label" aria-hidden="true"></p>
+        </div>
+      </div>
+    </div>
+
+    <p class="lib-hint">Pick a case from the shelf, or press start to play in order.</p>
+    <div class="lib-actions">
+      <button class="btn" id="btn-continue" type="button"><span class="lbl">Start</span> <svg class="ic"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-quiet" type="button" data-act="settings">Settings</button>
+    </div>
+
+    <div id="popup" class="win win-pop" role="dialog" aria-modal="false" aria-labelledby="pop-title" hidden>
+      <div class="win-bar"><button class="win-close" type="button" aria-label="Close" data-act="pop-close"></button><span class="win-title" id="pop-num"></span><i class="win-zoom" aria-hidden="true"></i></div>
+      <div class="win-body">
+        <h3 id="pop-title"></h3>
+        <p class="pop-blurb" id="pop-blurb"></p>
+        <ol class="pop-pages" id="pop-pages"></ol>
+        <p class="pop-spine" id="pop-spine"></p>
+        <div class="pop-actions"><button class="btn" type="button" id="pop-open">Open <svg class="ic"><use href="#i-arrow"/></svg></button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== DECK ============================== -->
+  <section id="scr-deck" class="screen" aria-label="Lecture">
+    <div id="pages">
+
+      <!-- ===== 01 WHAT I STUDY ===== -->
+      <article class="page" id="p-study">
+        <header class="pg-head"><h2 class="pg-title">WHAT I STUDY</h2></header>
+        <div class="study-grid">
+          <section class="win in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">Physical accessibility</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt"><p>Can a player perceive and operate the game? How is the user experience influenced by subtitles, remappable controls, readable text, and alternative inputs?</p></div>
+          </section>
+          <section class="win in" style="--acc:var(--blue)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">Conceptual accessibility</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt"><p>Does the game, and the culture around it, make room for the player? We will analyze how players present their identities through avatars, how much they value feeling represented, and how community norms enforced by online spaces influence accessibility.</p></div>
+          </section>
+          <section class="frame study-wide in">
+            <h3 class="frame-title">Where I look</h3>
+            <div class="txt"><p>Serious games, meaning games with an explicit educational purpose that are not meant to be played mainly for amusement (Abt, 1970), and the commercial games they get compared with. In my view, though, any game can become serious, whether or not it was designed for that. James Paul Gee makes a similar point about commercial games, which he calls “learning machines” (Gee, 2003). Minecraft is my own example: a commercial game that ended up in classrooms (Di Leo &amp; Traetta, 2025).</p></div>
+          </section>
+        </div>
+      </article>
+
+      <!-- ===== PART 1 ===== -->
+      <article class="page page-divider" id="p-part1">
+        <div class="div-text">
+          <h2 class="div-title in">PHYSICAL<br>ACCESSIBILITY</h2>
+          <p class="div-q in"><span>PART 1</span><svg class="ic div-arrow"><use href="#i-arrow"/></svg><span><span class="q-text">CAN YOU PERCEIVE AND OPERATE THE GAME?</span></span></p>
+        </div>
+        <section class="win div-panel in" style="--acc:var(--lilac)" aria-label="Accessibility options, a demonstration">
+          <div class="win-bar"><i class="win-close"></i><span class="win-title">Accessibility</span><i class="win-zoom"></i></div>
+          <div class="win-body opts" id="opts">
+            <div class="opt" data-k="subs"><span class="opt-l">Subtitles</span><button class="tog" type="button" role="switch" aria-checked="false" aria-label="Subtitles"><i></i></button></div>
+            <div class="opt" data-k="remap"><span class="opt-l">Remappable controls</span><button class="tog" type="button" role="switch" aria-checked="false" aria-label="Remappable controls"><i></i></button></div>
+            <div class="opt" data-k="size"><span class="opt-l">Text size</span><div class="seg" role="slider" tabindex="0" aria-label="Text size" aria-valuemin="1" aria-valuemax="5" aria-valuenow="2"><i data-v="1"></i><i data-v="2"></i><i data-v="3"></i><i data-v="4"></i><i data-v="5"></i></div></div>
+            <div class="opt" data-k="alt"><span class="opt-l">Alternative inputs</span><button class="tog" type="button" role="switch" aria-checked="false" aria-label="Alternative inputs"><i></i></button></div>
+            <div class="opt" data-k="hold"><span class="opt-l">Hold to toggle</span><button class="tog" type="button" role="switch" aria-checked="false" aria-label="Hold to toggle"><i></i></button></div>
+          </div>
+        </section>
+      </article>
+
+      <!-- ===== 02 A GAP IN THE GUIDELINES ===== -->
+      <article class="page" id="p-gap">
+        <header class="pg-head"><h2 class="pg-title">A GAP IN THE GUIDELINES</h2></header>
+        <div class="two-col gap-cols">
+          <section class="win in" style="--acc:var(--blue)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">What exists for videogames</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt">
+              <p>The <a class="tlink" href="#w-gagfull" role="button" data-open="w-gagfull" data-step="1">Game Accessibility Guidelines (GAG)</a> are the most comprehensive resource on game accessibility. They have been written by studios, specialists and academics.</p>
+              <p>The guidelines cover about 120 items, sorted by area (motor, cognitive, vision, hearing, speech, general) and by level (basic, intermediate, advanced)</p>
+              <p>Nothing equivalent exists for serious games: educational environments have specific requirements that the Guidelines do not cover. Similarly, many of the checks included in the GAGs do not apply to educational games.</p>
+            </div>
+          </section>
+          <div class="col-stack">
+            <section class="win in" style="--acc:var(--lilac)">
+              <div class="win-bar"><i class="win-close"></i><h3 class="win-title">What doesn’t fit a classroom</h3><i class="win-zoom"></i></div>
+              <div class="win-body txt">
+                <ul class="dash">
+                  <li><a class="tlink" href="#w-bypass" role="button" data-open="w-bypass" data-step="2">“Offer a means to bypass gameplay elements that aren’t part of the core mechanic”</a>: in a serious game, the part you skip may be the lesson (Habgood &amp; Ainsworth, 2011)</li>
+                  <li>GAG picture one player and one game; at school, many settings belong to the teacher</li>
+                </ul>
+              </div>
+            </section>
+            <p class="goal frame in"><span class="goal-k">My goal:</span> <span class="goal-t">Serious Game Accessibility Guidelines</span></p>
+          </div>
+        </div>
+
+        <section class="win win-float win-browser jit" id="w-gagfull" style="--acc:var(--blue)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Game accessibility guidelines</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <p class="win-addr">gameaccessibilityguidelines.com/full-list</p>
+          <div class="win-scroll" tabindex="0" aria-label="Full list of the Game Accessibility Guidelines">
+            <img src="assets/img/gag-full-1.png" alt="The Game Accessibility Guidelines website, full list page. Levels explained: basic, intermediate, advanced. Motor guidelines follow." width="960" height="2400" loading="lazy">
+            <img src="assets/img/gag-full-2.png" alt="Full list continued: motor and cognitive guidelines." width="960" height="2400" loading="lazy">
+            <img src="assets/img/gag-full-3.png" alt="Full list continued: cognitive and vision guidelines." width="960" height="2400" loading="lazy">
+            <img src="assets/img/gag-full-4.png" alt="Full list continued: vision and hearing guidelines." width="960" height="2400" loading="lazy">
+            <img src="assets/img/gag-full-5.png" alt="Full list continued: speech and general guidelines." width="960" height="1722" loading="lazy">
+          </div>
+        </section>
+        <section class="win win-float jit" id="w-bypass" style="--acc:var(--lilac)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">General, intermediate</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/gag-bypass.png" alt="Game Accessibility Guidelines page: Offer a means to bypass gameplay elements that aren’t part of the core mechanic, via settings or in-game skip option. Example: Puzzle Retreat allows players to take as much time on an individual puzzle as they’d like, reset it as many times as they want and even skip the puzzle entirely." width="1408" height="713"></div>
+        </section>
+      </article>
+
+      <!-- ===== 03 FROM CHECKLISTS TO PLAYABILITY (1) ===== -->
+      <article class="page" id="p-check-1">
+        <header class="pg-head">
+          <h2 class="pg-title">FROM CHECKLISTS TO PLAYABILITY</h2>
+          <p class="pg-sub">A systematic mapping of “Can I Play That?” and GAGs</p>
+        </header>
+        <div class="two-col cl1-cols">
+          <div class="txt txt-lg">
+            <p class="big-num in"><span data-count="479">479</span></p>
+            <p class="in">I mapped 479 accessibility reviews (2019–2025) by disabled players onto the GAG (Di Leo &amp; Tarantino, 2026) to understand how accessible mainstream games actually are</p>
+            <p class="in">To do so, we manually coded each review and noted whether it mentioned a guideline, and whether it was implemented or missing. Reviews received a composite score based on how many guidelines appeared (represented count) and how many of them were rated positively (positive rate)</p>
+          </div>
+          <section class="win win-paper jit in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">DiGRA 2026</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+            <div class="win-img"><img src="assets/img/paper-digra.png" alt="First page of the paper From Checklists to Playability: A systematic mapping of player reviews to the Game Accessibility Guidelines, by Nadia Di Leo and Antonino Tarantino, University of Foggia." width="728" height="836"></div>
+          </section>
+        </div>
+        <p class="cite in">Di Leo, N., &amp; Tarantino, A. (2026). From checklists to playability: A systematic mapping of player reviews to the Game Accessibility Guidelines. In <i>Proceedings of DiGRA 2026</i>. Digital Games Research Association.</p>
+      </article>
+
+      <!-- ===== 03 FROM CHECKLISTS TO PLAYABILITY (2) ===== -->
+      <article class="page" id="p-check-2">
+        <header class="pg-head"><h2 class="pg-title">FROM CHECKLISTS TO PLAYABILITY</h2></header>
+        <div class="two-col cl2-cols">
+          <div>
+            <p class="lead in">Coverage is uneven: Intermediate and Advanced requirements are almost never mentioned in the reviews. “Hearing” is the most represented category, while “Speech” almost never appears</p>
+            <section class="win in" style="--acc:var(--blue)">
+              <div class="win-bar"><i class="win-close"></i><span class="win-title">High scores</span><i class="win-zoom"></i></div>
+              <div class="win-body">
+                <p class="hs-cap">The reviews with the highest accessibility profiles (in terms of score) were:</p>
+                <table class="hiscore">
+                  <thead><tr><th scope="col">Game</th><th scope="col">Game score</th><th scope="col">Positive rate</th><th scope="col">Represented count</th></tr></thead>
+                  <tbody>
+                    <tr><th scope="row">South of Midnight</th><td>0.72</td><td>0.92</td><td>37</td></tr>
+                    <tr><th scope="row">Dragon Age: The Veilguard</th><td>0.72</td><td>0.97</td><td>29</td></tr>
+                    <tr><th scope="row">Stories of Blossom</th><td>0.72</td><td>0.92</td><td>36</td></tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+          <div class="desk" aria-label="Figures">
+            <button class="file in" type="button" data-open="w-repr" data-step="1"><svg class="fi"><use href="#i-file"/></svg><span>representation-rate</span></button>
+            <button class="file in" type="button" data-open="w-yes" data-step="2"><svg class="fi"><use href="#i-file"/></svg><span>yes-rate</span></button>
+          </div>
+        </div>
+        <section class="win win-float jit" id="w-repr" style="--acc:var(--lilac)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Representation rate</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/digra-representation.png" alt="Heatmap, representation rate (how often guidelines are mentioned) by cluster and level. Basic: cognitive 14%, general 7%, hearing 39%, motor 19%, speech 1%, vision 15%. Intermediate: 9%, 9%, 15%, 10%, 2%, 6%. Advanced: 2%, 1%, 0%, 6%, 0%, 7%." width="1600" height="1200"></div>
+        </section>
+        <section class="win win-float jit" id="w-yes" style="--acc:var(--blue)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Yes-rate</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/digra-yes-rate.png" alt="Heatmap, yes-rate by cluster and level. Basic: cognitive 63%, general 85%, hearing 73%, motor 65%, speech 75%, vision 56%. Intermediate: 81%, 84%, 59%, 56%, 72%, 77%. Advanced: 63%, 79%, 50%, 46%, 100%, 52%." width="1600" height="1200"></div>
+        </section>
+      </article>
+
+      <!-- ===== 04 THE AWARD NOMINEES (1) ===== -->
+      <article class="page" id="p-awards-1">
+        <header class="pg-head"><h2 class="pg-title pg-title-md">THE AWARD NOMINEES FOR THE INNOVATION IN ACCESSIBILITY AWARD 2025</h2></header>
+        <div class="two-col aw1-cols">
+          <div class="txt">
+            <p class="in">In another study, currently under review, the five nominees for the Innovation in Accessibility award at The Game Awards 2025 were analyzed: Assassin’s Creed Shadows, Atomfall, DOOM: The Dark Ages, EA Sports FC 26, and South of Midnight.</p>
+            <p class="in">After a 60-minute playthrough, following the First-Time User Experience framework (Barnett et al., 2018), two annotators (κ = 0.92) evaluated how many GAGs were implemented and documented in each game.</p>
+            <p class="in">All of them obtained high scores, but most features were not documented on the games’ websites and many advanced items were still missing.</p>
+            <p class="note frame in">DOOM: The Dark Ages won the award while ranking third on compliance. My audit placed South of Midnight at first place.</p>
+          </div>
+          <section class="win jit in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">Implemented and documented</span><i class="win-zoom"></i></div>
+            <div class="win-body">
+              <p class="chart-cap">Accessibility features implemented and documented (%)</p>
+              <div class="bars" id="bars" role="img" aria-label="Bar chart. Implemented, as a percentage of applicable GAG items, and documented, as a percentage of implemented features: Assassin’s Creed Shadows 77.0 and 26.5; Atomfall 83.0 and 31.0; DOOM: The Dark Ages 79.7 and 40.6; EA Sports FC 26 74.5 and 48.6; South of Midnight 83.2 and 25.5."></div>
+              <p class="legend"><span><i class="sw sw-impl"></i>Implemented (% of applicable GAG items)</span><span><i class="sw sw-doc"></i>Documented (% of implemented features)</span></p>
+            </div>
+          </section>
+        </div>
+        <p class="cite in">Di Leo, N. (2026a). <i>A matter of accessibility: A guidelines-based accessibility evaluation of award-nominated video games</i> (manuscript under review).</p>
+      </article>
+
+      <!-- ===== 04 THE AWARD NOMINEES (2) ===== -->
+      <article class="page" id="p-awards-2">
+        <header class="pg-head">
+          <h2 class="pg-title">THE AWARD NOMINEES</h2>
+          <p class="pg-sub">GAG implementation, game by game</p>
+        </header>
+        <div class="two-col aw2-cols">
+          <div class="game-list in" role="tablist" aria-label="Choose a game" id="game-list"></div>
+          <section class="win jit in" style="--acc:var(--blue)" id="game-view">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title" id="gv-title"></span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+            <div class="win-img gv-img"><img id="gv-img" src="assets/img/heat-ac-shadows.png" alt="" width="1144" height="834"></div>
+          </section>
+        </div>
+      </article>
+
+      <!-- ===== 05 GAME CHANGER ===== -->
+      <article class="page" id="p-gc">
+        <header class="pg-head">
+          <h2 class="pg-title">GAME CHANGER</h2>
+          <p class="pg-sub">My PhD project: <span class="np">Game changer. Rewriting the rules of inclusive education</span></p>
+        </header>
+        <div class="two-col gc-cols">
+          <div class="txt txt-sm">
+            <p class="in">My project involves building a teaching intervention focused on games with specific accessibility settings, above all Minecraft Education.</p>
+            <p class="in">I am conducting several Minecraft-based lessons in primary and lower-secondary classes in Italy, with experimental and control groups. The lessons cover creative writing, life science, maths, and environmental education.</p>
+            <p class="in">I developed a mixed-methods study design: students’ experiences are evaluated through standardized questionnaires, focus groups, gameplay recordings.</p>
+            <p class="in">Through these instruments, I am measuring whether their attitude towards the subjects of the lessons has changed, as well as their interaction with the Minecraft environment.</p>
+            <p class="in">Students can pick their own tools and settings, and record those choices throughout the lessons thanks to an accessibility checklist.</p>
+            <p class="in">I will use the results to write guidelines for teachers and developers on using games inclusively at school</p>
+          </div>
+          <section class="win in" style="--acc:var(--lilac)" data-widget="rando">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">Study design</span><i class="win-zoom"></i></div>
+            <div class="win-body">
+              <div class="rando" aria-hidden="true">
+                <div class="rd-pool"></div>
+                <div class="rd-groups">
+                  <div class="rd-group" data-g="a"><p class="rd-name">Minecraft Education</p><div class="rd-slots"></div></div>
+                  <div class="rd-group" data-g="b"><p class="rd-name">Conventional teaching</p><div class="rd-slots"></div></div>
+                </div>
+                <p class="rd-flow"><span>Pre-test</span><svg class="ic"><use href="#i-arrow"/></svg><span>Lessons</span><svg class="ic"><use href="#i-arrow"/></svg><span>Post-test</span></p>
+              </div>
+              <p class="rd-text">Cluster-randomised design: 8 classes randomly assigned to Minecraft Education (4) or conventional teaching (4), with pre- and post-tests, within a mixed-methods intervention design (Creswell &amp; Plano Clark, 2018)</p>
+              <button class="btn btn-sm rd-go" type="button" data-step="1">Randomise</button>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- ===== 06 WHY MINECRAFT EDUCATION? ===== -->
+      <article class="page" id="p-whymc">
+        <header class="pg-head">
+          <h2 class="pg-title">WHY MINECRAFT EDUCATION?</h2>
+          <p class="pg-sub">Evidence of its educational effectiveness</p>
+        </header>
+        <div class="two-col mc-cols">
+          <div class="txt txt-lg">
+            <p class="in">To analyze the impact of Minecraft Education, we conducted a systematic review of 18 peer-reviewed studies (2019–2024), from kindergarten to secondary school (Di Leo &amp; Traetta, 2025)</p>
+            <p class="in">We found that Minecraft is used across nations (from Taiwan to Brazil) and school subjects (Geography, Maths, Life Sciences, History etc.). Most studies reported positive results, both qualitatively and quantitatively.</p>
+            <p class="in">There are, however, some barriers that need to be addressed, such as the reliance on technological infrastructure and the learning curve of the game, which affects teachers just as much as students.</p>
+          </div>
+          <section class="win win-paper jit in" style="--acc:var(--blue)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">IJET 2025</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+            <div class="win-img"><img src="assets/img/paper-ijet.png" alt="First page of Crafting knowledge block by block: A systematic review on the educational potential of Minecraft in schools, by Nadia Di Leo and Luigi Traetta, Italian Journal of Educational Technology." width="1260" height="1138"></div>
+          </section>
+        </div>
+        <p class="cite in">Di Leo, N., &amp; Traetta, L. (2025). Crafting knowledge block by block: A systematic review on the educational potential of Minecraft in schools. <i>Italian Journal of Educational Technology, 33</i>(1), 67–85.</p>
+      </article>
+
+      <!-- ===== 07 MINECRAFT EDUCATION AND THE GAG ===== -->
+      <article class="page" id="p-mcgag">
+        <header class="pg-head">
+          <h2 class="pg-title pg-title-md">EVALUATING MINECRAFT EDUCATION WITH THE GAG</h2>
+          <p class="pg-sub">Evidence of its accessibility</p>
+        </header>
+        <div class="two-col mg-cols">
+          <div class="txt">
+            <p class="in">To assess Minecraft’s accessibility, I manually mapped it to the Game Accessibility Guidelines.</p>
+            <p class="in">Minecraft Education fully satisfies 37.2% of the Guidelines, and partially satisfies another 38% of them.</p>
+            <p class="in">The General, Speech, and Vision categories are those with the best results, while the Hearing and Motor categories still have some gaps. Further data on Minecraft’s accessibility is being collected thanks to the Accessibility Checklists of the Game Changer project.</p>
+            <p class="note frame in">There’s still work to be done, but it confirms itself as a very accessible game.</p>
+          </div>
+          <div class="mg-side">
+            <section class="win jit in" style="--acc:var(--lilac)">
+              <div class="win-bar"><i class="win-close"></i><span class="win-title">Overall GAG compliance</span><i class="win-zoom"></i></div>
+              <div class="win-body donut-body">
+                <svg class="donut" viewBox="0 0 120 120" role="img" aria-label="Overall GAG compliance of Minecraft Education: yes 37.2%, partial 38.0%, no 14.9%, not applicable 9.9%. 91 of 109 applicable guidelines addressed.">
+                  <defs>
+                    <pattern id="pat-dots" width="2" height="2" patternUnits="userSpaceOnUse"><rect width="2" height="2" fill="#a0b2ba"/><rect width="1" height="1" fill="#55697a"/></pattern>
+                    <pattern id="pat-lines" width="3" height="3" patternUnits="userSpaceOnUse"><rect width="3" height="3" fill="#e4e0e8"/><rect width="3" height="1" fill="#8f86a0"/></pattern>
+                  </defs>
+                  <circle class="d-track" cx="60" cy="60" r="44"/>
+                  <circle class="d-seg" data-v="37.2" stroke="#6f6280" cx="60" cy="60" r="44"/>
+                  <circle class="d-seg" data-v="38.0" stroke="#afa0ba" cx="60" cy="60" r="44"/>
+                  <circle class="d-seg" data-v="14.9" stroke="url(#pat-dots)" cx="60" cy="60" r="44"/>
+                  <circle class="d-seg" data-v="9.9" stroke="url(#pat-lines)" cx="60" cy="60" r="44"/>
+                </svg>
+                <div class="donut-c"><span class="dc-n">91</span><span class="dc-l">of 109 addressed</span></div>
+                <ul class="d-legend">
+                  <li><i class="sw" style="background:#6f6280"></i><b>37.2%</b> Yes</li>
+                  <li><i class="sw" style="background:#afa0ba"></i><b>38.0%</b> Partial</li>
+                  <li><i class="sw sw-dots"></i><b>14.9%</b> No</li>
+                  <li><i class="sw sw-lines"></i><b>9.9%</b> N/A</li>
+                </ul>
+              </div>
+            </section>
+            <div class="desk desk-row">
+              <button class="file in" type="button" data-open="w-dash" data-step="1"><svg class="fi"><use href="#i-file"/></svg><span>dashboard</span></button>
+              <button class="file in" type="button" data-open="w-cl" data-step="2"><svg class="fi"><use href="#i-doc"/></svg><span>checklists</span></button>
+              <button class="file in" type="button" data-open="w-jimtlt" data-step="3"><svg class="fi"><use href="#i-doc"/></svg><span>article</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="cite in">Di Leo, N. (2026c). From feature to function. Rethinking videogame accessibility as distributed learning. <i>Journal of Inclusive Methodology and Technology in Learning and Teaching, 6</i>(1).</p>
+
+        <section class="win win-float jit" id="w-dash" style="--acc:var(--blue)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Compliance dashboard</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/mce-dashboard.png" alt="Minecraft Education Game Accessibility Guidelines compliance dashboard: overall compliance donut, radar chart by category, compliance rate by guideline level, compliance by accessibility category and a compliance score heatmap." width="954" height="877"></div>
+        </section>
+        <section class="win win-float jit" id="w-cl" style="--acc:var(--lilac)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Game Changer checklists</span><i class="win-zoom"></i></div>
+          <div class="win-body cl-body">
+            <figure class="cl-fig">
+              <img src="assets/img/checklist-tts.png" alt="Checklist row in Italian: Sintetizzatore vocale per la chat, with Disattivato ticked, and the handwritten note: Non si sa mai cosa scrivono gli altri." width="809" height="125">
+              <figcaption>Chat text-to-speech: <b>turned off</b>. “You never know what the others write.”</figcaption>
+            </figure>
+            <figure class="cl-fig">
+              <img src="assets/img/checklist-opacity.png" alt="Checklist row in Italian: Opacità sfondo testo (testo, chat, azioni). L’hai cambiato? Quale? Perché? Handwritten answer: Tutti, non vedo." width="791" height="51">
+              <figcaption>Text background opacity (text, chat, actions). Did you change it? Which one? Why? “All of them, I can’t see…”</figcaption>
+            </figure>
+          </div>
+        </section>
+        <section class="win win-float jit" id="w-jimtlt" style="--acc:var(--blue)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">JIMTLT 2026</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/paper-jimtlt.png" alt="First page of From feature to function. Rethinking videogame accessibility as distributed learning, by Nadia Di Leo, Journal of Inclusive Methodology and Technology in Learning and Teaching." width="1241" height="1053"></div>
+        </section>
+      </article>
+
+      <!-- ===== 08 WHAT 27,036 REVIEWS SAY ===== -->
+      <article class="page" id="p-reviews">
+        <header class="pg-head"><h2 class="pg-title">WHAT <span data-count="27036" data-sep="1">27,036</span> REVIEWS SAY</h2></header>
+        <div class="two-col rv-cols">
+          <div class="txt">
+            <p class="in">To get a bigger picture, I analysed 27,036 English reviews from Google Play and the App Store (2018–2026)</p>
+            <p class="in">Two coders built a 15-category codebook and manually annotated a sample of the corpus (200 reviews); then, an LLM coded the full corpus (macro-F1 0.84; κ 0.71 vs 0.74 between humans)</p>
+            <p class="note frame in">73.9% of the reviews about classroom use agree with the store description</p>
+            <p class="in">Negative reviews cluster on sign-in, licences and crashes: the gap opens before learning can start</p>
+          </div>
+          <div class="rv-side">
+            <section class="win jit in" style="--acc:var(--blue)">
+              <div class="win-bar"><i class="win-close"></i><span class="win-title">Store description alignment</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+              <div class="win-img"><img src="assets/img/reviews-alignment.png" alt="Heatmap: store description alignment within each review category, as agreement, mixed, disagreement or not applicable. Classroom Learning Context: 74% agreement. Access Account License: 77% disagreement. Tech Bug Performance: 71% disagreement." width="1855" height="1718"></div>
+            </section>
+            <div class="desk desk-corner">
+              <button class="file in" type="button" data-open="w-rvpaper" data-step="1"><svg class="fi"><use href="#i-doc"/></svg><span>manuscript</span></button>
+            </div>
+          </div>
+        </div>
+        <p class="cite in">Source: Di Leo, N. (2026b). <i>The reception of Minecraft Education Edition in user reviews: An LLM-assisted thematic analysis</i> (manuscript submitted for publication).</p>
+        <section class="win win-float jit" id="w-rvpaper" style="--acc:var(--lilac)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Manuscript</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/paper-reviews.png" alt="First page of The reception of Minecraft Education Edition in user reviews: an LLM-assisted thematic analysis, by Nadia Di Leo." width="935" height="955"></div>
+        </section>
+      </article>
+
+      <!-- ===== 09 CHOOSING A SKIN ===== -->
+      <article class="page" id="p-skin">
+        <div class="two-col skin-cols">
+          <div>
+            <h2 class="skin-q in">ONE OF THE FIRST THINGS STUDENTS DID WAS CHOOSE THEIR SKIN.</h2>
+            <p class="lead in">Even though their first task was to complete the tutorial, their initial priority was to create an avatar that represented them.</p>
+            <p class="note frame in">Narrative transportation (the cognitive, emotional, and visual absorption in a story and its characters) strongly predicts identification, and players with higher transportation hold more favorable attitudes toward protagonists (Iskender, 2023)</p>
+          </div>
+          <section class="win win-video jit in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">Skin selection</span><i class="win-zoom"></i></div>
+            <div class="win-img video-box">
+              <video id="skin-video" src="assets/video/skin-selection.mp4" poster="assets/video/skin-selection-poster.jpg" muted playsinline loop preload="auto" aria-label="Screen recording from Minecraft Education: a student scrolls through the skin packs and picks an avatar before starting the tutorial."></video>
+              <button class="vid-toggle" type="button" aria-label="Play or pause the video"></button>
+            </div>
+          </section>
+        </div>
+        <p class="cite in">Iskender, Ö. (2023). Identification with Game Characters: Theoretical Explanations, Predictors, and Psychological Outcomes. <i>Psikiyatride Guncel Yaklasimlar - Current Approaches in Psychiatry</i>.</p>
+      </article>
+
+      <!-- ===== PART 2 ===== -->
+      <article class="page page-divider" id="p-part2">
+        <div class="div-text">
+          <h2 class="div-title in">CONCEPTUAL<br>ACCESSIBILITY</h2>
+          <p class="div-q in"><span>PART 2</span><svg class="ic div-arrow"><use href="#i-arrow"/></svg><span><span class="q-text">DOES THE GAME, AND ITS CULTURE, MAKE ROOM FOR YOU?</span></span></p>
+        </div>
+        <section class="win div-panel in" style="--acc:var(--blue)" aria-hidden="true">
+          <div class="win-bar"><i class="win-close"></i><span class="win-title">Make room</span><i class="win-zoom"></i></div>
+          <div class="win-body"><div class="lobby" data-widget="lobby"></div></div>
+        </section>
+      </article>
+
+      <!-- ===== 10 STRESSING OUT THE DAMSEL IN DISTRESS ===== -->
+      <article class="page" id="p-damsel">
+        <header class="pg-head">
+          <h2 class="pg-title">STRESSING OUT THE DAMSEL IN DISTRESS</h2>
+        </header>
+        <p class="lead lead-wide in">Do gamers feel represented by the characters they play as and included by the communities they inhabit? We conducted 19 semi-structured interviews with gamers, read through the lenses of postdigital feminism (Di Leo et al., 2025)</p>
+        <div class="layers">
+          <section class="win in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">Representation</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt txt-sm"><ul class="dash">
+              <li>Participants saw a shift from hypersexualised women to complex characters such as Samus Aran and Aloy;</li>
+              <li>some participants advocated for female villains who did not necessarily have a later redemption arc.</li>
+            </ul></div>
+          </section>
+          <section class="win in" style="--acc:var(--blue)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">Infrastructures</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt txt-sm"><ul class="dash">
+              <li>Some interviewees avoided using voice chat in multiplayer lobbies, as it often reveals the gender of who uses it, so women muted their mics or picked male nicknames to avoid abuse;</li>
+              <li>Some interviewees believed that Twitch rewards a narrow, hyper-feminine self-presentation.</li>
+            </ul></div>
+          </section>
+          <section class="win in" style="--acc:var(--grey)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">Practices</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt txt-sm"><ul class="dash">
+              <li>There were some complaints about “forced representation” (citing the Sweet Baby Inc. company: ‘they forced ideologies into games (the so-called woke), aiming to change the plot or dialogues.’), together with examples of meaningful change (<i>Celeste</i> as an example of a subtle, effective portrayal of a queer protagonist)</li>
+              <li>Heterogeneous development teams were the fix participants kept returning to</li>
+            </ul></div>
+          </section>
+        </div>
+        <div class="damsel-foot">
+          <p class="cite in">Di Leo, N., Rizzi, A., &amp; Traetta, L. (2025). Stressing out the ‘damsel in distress’: Intersectional shifts in women’s representation in video games. <i>Postdigital Science and Education, 8</i>, 113–139.</p>
+          <button class="file file-sm in" type="button" data-open="w-psde" data-step="1"><svg class="fi"><use href="#i-globe"/></svg><span>article</span></button>
+        </div>
+        <section class="win win-float jit" id="w-psde" style="--acc:var(--blue)" hidden>
+          <div class="win-bar"><button class="win-close" type="button" aria-label="Close window"></button><span class="win-title">Postdigital Science and Education</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+          <div class="win-img"><img src="assets/img/paper-psde.png" alt="Article page in Postdigital Science and Education: Stressing Out the Damsel in Distress: Intersectional Shifts in Women’s Representation in Video Games, by Nadia Di Leo, Alice Rizzi and Luigi Traetta. Open access, published 22 December 2025." width="2048" height="750"></div>
+        </section>
+      </article>
+
+      <!-- ===== 11 THE BACKLASH (1) ===== -->
+      <article class="page" id="p-backlash-1">
+        <header class="pg-head">
+          <h2 class="pg-title">THE BACKLASH</h2>
+          <p class="pg-sub">GamerGate noticed us (and proved our point)!</p>
+        </header>
+        <div class="two-col bl-cols">
+          <div class="txt">
+            <ul class="dash">
+              <li class="in">A post about our article on the subreddit r/KotakuInAction gained some traction (123 upvotes, 46 comments).</li>
+              <li class="in">Commenters went after women participants’ “low” play times and our supposed politics</li>
+              <li class="in">There were also insults and body-shaming</li>
+              <li class="in">This confirmed what the participants had told us: gatekeeping and hostility towards women are sadly common in male gaming spaces</li>
+              <li class="in">GamerGate began in 2014 around women in games, and went on to target academics who work in Game Studies</li>
+            </ul>
+          </div>
+          <section class="win win-browser jit in" style="--acc:var(--grey)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">Reddit</span><button class="win-zoom" type="button" aria-label="Enlarge"></button></div>
+            <p class="win-addr">reddit.com/r/KotakuInAction</p>
+            <div class="win-img"><img src="assets/img/reddit-post.png" alt="Archived, deleted post on r/KotakuInAction titled Stressing Out the Damsel in Distress: Intersectional Shifts in Women’s Representation in Video Games, with 123 upvotes and 46 comments." width="1087" height="475"></div>
+          </section>
+        </div>
+      </article>
+
+      <!-- ===== 11 THE BACKLASH (2) ===== -->
+      <article class="page" id="p-backlash-2">
+        <header class="pg-head">
+          <h2 class="pg-title">THE BACKLASH</h2>
+          <p class="pg-sub">From the thread</p>
+        </header>
+        <div class="wall" id="cmt-wall">
+          <figure class="cmt jit" data-step="1" style="--x:790;--y:0;--w:500;--r:0.8"><img src="assets/img/reddit-c3.png" alt="Comment: Feminism is a hate movement, they prove it all the time. 93 upvotes." width="647" height="110"></figure>
+          <figure class="cmt jit" data-step="2" style="--x:0;--y:18;--w:700;--r:-0.7"><img src="assets/img/reddit-c1.png" alt="Comment by a Top 1% Commenter: Video games can stop being male fantasies when women make up the majority of the demographic, until then don’t expect Bloody muscle combat adventure VII to be about buying rugs for your house. 111 upvotes." width="1049" height="141"></figure>
+          <figure class="cmt jit" data-step="3" style="--x:760;--y:118;--w:640;--r:-0.5"><img src="assets/img/reddit-c5.png" alt="Comment quoting: remove and take away anything that straight men like and cater everything to women, the article/research. 1 upvote." width="943" height="110"></figure>
+          <figure class="cmt jit" data-step="4" style="--x:30;--y:150;--w:680;--r:0.6"><img src="assets/img/reddit-c7.png" alt="Comment: Where are the games catering to men these days? I must have missed it. Even traditionally male franchises now include bs that caters to the weirdos. I want damsels in distress. I want heroic stories etc. I can’t find it. The industry already has been destroyed and these people still complain. 6 upvotes." width="1030" height="138"></figure>
+          <figure class="cmt jit" data-step="5" style="--x:780;--y:230;--w:600;--r:1"><img src="assets/img/reddit-c2.png" alt="Comment: I always interpreted it as women who pretend to be into something to get male attention. In my experience, that includes a lot of fake gamer girls. 5 upvotes." width="911" height="123"></figure>
+          <figure class="cmt jit" data-step="6" style="--x:70;--y:280;--w:520;--r:-1"><img src="assets/img/reddit-c4.png" alt="Comment: I thought Italy was doing better with its actual Girl Boss leader. 2 upvotes." width="761" height="96"></figure>
+          <figure class="cmt jit" data-step="7" style="--x:740;--y:348;--w:660;--r:-0.4"><img src="assets/img/reddit-c8.png" alt="Comment: That is the most amount of words I have ever seen anyone use to say put a chick in it and make her gay and lame. 4 upvotes." width="1060" height="137"></figure>
+          <figure class="cmt jit" data-step="8" style="--x:100;--y:378;--w:560;--r:0.9"><img src="assets/img/reddit-c6.png" alt="Comment quoting the article: The female participants had average weekly gaming times of 1 hours, 2 hours, 5 hours, 7 hours and 2 people stated 8 hours. Reply: My average is 80 to 100 hours. Tourists. 23 upvotes." width="947" height="187"></figure>
+        </div>
+        <p class="wall-hint" id="wall-hint">Click, or press the right arrow, to read the thread</p>
+      </article>
+
+      <!-- ===== 12 WHO IS THE PLAYER? ===== -->
+      <article class="page" id="p-player">
+        <header class="pg-head"><h2 class="pg-title">WHO IS THE PLAYER?</h2></header>
+        <div class="two-col pl-cols">
+          <section class="win in" style="--acc:var(--lilac)">
+            <div class="win-bar"><i class="win-close"></i><h3 class="win-title">What connects the studies</h3><i class="win-zoom"></i></div>
+            <div class="win-body txt"><ul class="dash">
+              <li>Accessibility is negotiated across policy, technology and everyday practice (Ellcessor, 2016)</li>
+              <li>Settings menus, school licences, voice chat and Reddit threads all decide who gets in</li>
+              <li>Checklists find missing features; reviews and interviews show who is left out</li>
+            </ul></div>
+          </section>
+          <div class="questions">
+            <h3 class="q-head in">Questions for you</h3>
+            <button class="dialog" type="button" data-step="1" data-text="Have you ever stopped playing a game because it didn’t fit you?"><span class="dlg-text"></span><i class="dlg-more" aria-hidden="true"></i></button>
+            <button class="dialog" type="button" data-step="2" data-text="Should an educational game ever let you skip the learning?"><span class="dlg-text"></span><i class="dlg-more" aria-hidden="true"></i></button>
+          </div>
+        </div>
+      </article>
+
+      <!-- ===== 13 THANK YOU ===== -->
+      <article class="page" id="p-end">
+        <div class="end-wrap">
+          <div class="end-text">
+            <h2 class="end-title in">THANK YOU</h2>
+            <p class="end-name in">Nadia Di Leo</p>
+            <ul class="end-mail in">
+              <li><a href="mailto:nadia.dileo@unifg.it">nadia.dileo@unifg.it</a></li>
+              <li><a href="mailto:nadia.di_leo@kcl.ac.uk">nadia.di_leo@kcl.ac.uk</a></li>
+            </ul>
+          </div>
+          <section class="win end-qr jit in" style="--acc:var(--blue)">
+            <div class="win-bar"><i class="win-close"></i><span class="win-title">My website</span><i class="win-zoom"></i></div>
+            <div class="win-body">
+              <svg class="qr" viewBox="0 0 29 29" shape-rendering="crispEdges" role="img" aria-label="QR code linking to nadiadileo.neocities.org"><path d="M0 0h1v1h-1zM1 0h1v1h-1zM2 0h1v1h-1zM3 0h1v1h-1zM4 0h1v1h-1zM5 0h1v1h-1zM6 0h1v1h-1zM10 0h1v1h-1zM12 0h1v1h-1zM13 0h1v1h-1zM16 0h1v1h-1zM18 0h1v1h-1zM19 0h1v1h-1zM22 0h1v1h-1zM23 0h1v1h-1zM24 0h1v1h-1zM25 0h1v1h-1zM26 0h1v1h-1zM27 0h1v1h-1zM28 0h1v1h-1zM0 1h1v1h-1zM6 1h1v1h-1zM8 1h1v1h-1zM11 1h1v1h-1zM12 1h1v1h-1zM14 1h1v1h-1zM15 1h1v1h-1zM16 1h1v1h-1zM19 1h1v1h-1zM20 1h1v1h-1zM22 1h1v1h-1zM28 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM3 2h1v1h-1zM4 2h1v1h-1zM6 2h1v1h-1zM9 2h1v1h-1zM10 2h1v1h-1zM12 2h1v1h-1zM13 2h1v1h-1zM14 2h1v1h-1zM16 2h1v1h-1zM19 2h1v1h-1zM22 2h1v1h-1zM24 2h1v1h-1zM25 2h1v1h-1zM26 2h1v1h-1zM28 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM3 3h1v1h-1zM4 3h1v1h-1zM6 3h1v1h-1zM10 3h1v1h-1zM11 3h1v1h-1zM13 3h1v1h-1zM14 3h1v1h-1zM15 3h1v1h-1zM18 3h1v1h-1zM22 3h1v1h-1zM24 3h1v1h-1zM25 3h1v1h-1zM26 3h1v1h-1zM28 3h1v1h-1zM0 4h1v1h-1zM2 4h1v1h-1zM3 4h1v1h-1zM4 4h1v1h-1zM6 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM11 4h1v1h-1zM12 4h1v1h-1zM14 4h1v1h-1zM17 4h1v1h-1zM18 4h1v1h-1zM19 4h1v1h-1zM22 4h1v1h-1zM24 4h1v1h-1zM25 4h1v1h-1zM26 4h1v1h-1zM28 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM9 5h1v1h-1zM11 5h1v1h-1zM13 5h1v1h-1zM17 5h1v1h-1zM19 5h1v1h-1zM20 5h1v1h-1zM22 5h1v1h-1zM28 5h1v1h-1zM0 6h1v1h-1zM1 6h1v1h-1zM2 6h1v1h-1zM3 6h1v1h-1zM4 6h1v1h-1zM5 6h1v1h-1zM6 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM12 6h1v1h-1zM14 6h1v1h-1zM16 6h1v1h-1zM18 6h1v1h-1zM20 6h1v1h-1zM22 6h1v1h-1zM23 6h1v1h-1zM24 6h1v1h-1zM25 6h1v1h-1zM26 6h1v1h-1zM27 6h1v1h-1zM28 6h1v1h-1zM9 7h1v1h-1zM13 7h1v1h-1zM14 7h1v1h-1zM16 7h1v1h-1zM17 7h1v1h-1zM18 7h1v1h-1zM19 7h1v1h-1zM20 7h1v1h-1zM0 8h1v1h-1zM2 8h1v1h-1zM4 8h1v1h-1zM6 8h1v1h-1zM10 8h1v1h-1zM12 8h1v1h-1zM14 8h1v1h-1zM15 8h1v1h-1zM17 8h1v1h-1zM20 8h1v1h-1zM24 8h1v1h-1zM27 8h1v1h-1zM0 9h1v1h-1zM1 9h1v1h-1zM3 9h1v1h-1zM4 9h1v1h-1zM9 9h1v1h-1zM10 9h1v1h-1zM12 9h1v1h-1zM14 9h1v1h-1zM15 9h1v1h-1zM17 9h1v1h-1zM18 9h1v1h-1zM20 9h1v1h-1zM21 9h1v1h-1zM22 9h1v1h-1zM25 9h1v1h-1zM28 9h1v1h-1zM3 10h1v1h-1zM4 10h1v1h-1zM5 10h1v1h-1zM6 10h1v1h-1zM7 10h1v1h-1zM9 10h1v1h-1zM10 10h1v1h-1zM11 10h1v1h-1zM12 10h1v1h-1zM13 10h1v1h-1zM20 10h1v1h-1zM22 10h1v1h-1zM23 10h1v1h-1zM24 10h1v1h-1zM26 10h1v1h-1zM27 10h1v1h-1zM28 10h1v1h-1zM1 11h1v1h-1zM2 11h1v1h-1zM5 11h1v1h-1zM7 11h1v1h-1zM8 11h1v1h-1zM9 11h1v1h-1zM10 11h1v1h-1zM11 11h1v1h-1zM12 11h1v1h-1zM15 11h1v1h-1zM17 11h1v1h-1zM20 11h1v1h-1zM23 11h1v1h-1zM24 11h1v1h-1zM27 11h1v1h-1zM3 12h1v1h-1zM4 12h1v1h-1zM6 12h1v1h-1zM10 12h1v1h-1zM11 12h1v1h-1zM12 12h1v1h-1zM16 12h1v1h-1zM17 12h1v1h-1zM19 12h1v1h-1zM20 12h1v1h-1zM21 12h1v1h-1zM22 12h1v1h-1zM25 12h1v1h-1zM27 12h1v1h-1zM28 12h1v1h-1zM1 13h1v1h-1zM2 13h1v1h-1zM8 13h1v1h-1zM11 13h1v1h-1zM12 13h1v1h-1zM13 13h1v1h-1zM15 13h1v1h-1zM16 13h1v1h-1zM20 13h1v1h-1zM21 13h1v1h-1zM22 13h1v1h-1zM25 13h1v1h-1zM28 13h1v1h-1zM4 14h1v1h-1zM6 14h1v1h-1zM10 14h1v1h-1zM14 14h1v1h-1zM15 14h1v1h-1zM16 14h1v1h-1zM18 14h1v1h-1zM20 14h1v1h-1zM21 14h1v1h-1zM22 14h1v1h-1zM24 14h1v1h-1zM25 14h1v1h-1zM27 14h1v1h-1zM28 14h1v1h-1zM0 15h1v1h-1zM5 15h1v1h-1zM7 15h1v1h-1zM10 15h1v1h-1zM13 15h1v1h-1zM14 15h1v1h-1zM16 15h1v1h-1zM17 15h1v1h-1zM18 15h1v1h-1zM20 15h1v1h-1zM21 15h1v1h-1zM25 15h1v1h-1zM27 15h1v1h-1zM3 16h1v1h-1zM4 16h1v1h-1zM5 16h1v1h-1zM6 16h1v1h-1zM8 16h1v1h-1zM10 16h1v1h-1zM14 16h1v1h-1zM15 16h1v1h-1zM16 16h1v1h-1zM17 16h1v1h-1zM19 16h1v1h-1zM20 16h1v1h-1zM21 16h1v1h-1zM22 16h1v1h-1zM25 16h1v1h-1zM27 16h1v1h-1zM28 16h1v1h-1zM1 17h1v1h-1zM4 17h1v1h-1zM5 17h1v1h-1zM10 17h1v1h-1zM11 17h1v1h-1zM14 17h1v1h-1zM15 17h1v1h-1zM17 17h1v1h-1zM21 17h1v1h-1zM22 17h1v1h-1zM25 17h1v1h-1zM26 17h1v1h-1zM28 17h1v1h-1zM0 18h1v1h-1zM4 18h1v1h-1zM6 18h1v1h-1zM10 18h1v1h-1zM11 18h1v1h-1zM12 18h1v1h-1zM13 18h1v1h-1zM23 18h1v1h-1zM24 18h1v1h-1zM27 18h1v1h-1zM28 18h1v1h-1zM1 19h1v1h-1zM3 19h1v1h-1zM5 19h1v1h-1zM7 19h1v1h-1zM10 19h1v1h-1zM11 19h1v1h-1zM12 19h1v1h-1zM16 19h1v1h-1zM17 19h1v1h-1zM18 19h1v1h-1zM20 19h1v1h-1zM23 19h1v1h-1zM25 19h1v1h-1zM27 19h1v1h-1zM0 20h1v1h-1zM2 20h1v1h-1zM3 20h1v1h-1zM6 20h1v1h-1zM7 20h1v1h-1zM10 20h1v1h-1zM11 20h1v1h-1zM16 20h1v1h-1zM17 20h1v1h-1zM19 20h1v1h-1zM20 20h1v1h-1zM21 20h1v1h-1zM22 20h1v1h-1zM23 20h1v1h-1zM24 20h1v1h-1zM8 21h1v1h-1zM9 21h1v1h-1zM10 21h1v1h-1zM13 21h1v1h-1zM16 21h1v1h-1zM17 21h1v1h-1zM18 21h1v1h-1zM19 21h1v1h-1zM20 21h1v1h-1zM24 21h1v1h-1zM26 21h1v1h-1zM27 21h1v1h-1zM28 21h1v1h-1zM0 22h1v1h-1zM1 22h1v1h-1zM2 22h1v1h-1zM3 22h1v1h-1zM4 22h1v1h-1zM5 22h1v1h-1zM6 22h1v1h-1zM12 22h1v1h-1zM14 22h1v1h-1zM16 22h1v1h-1zM17 22h1v1h-1zM18 22h1v1h-1zM19 22h1v1h-1zM20 22h1v1h-1zM22 22h1v1h-1zM24 22h1v1h-1zM25 22h1v1h-1zM27 22h1v1h-1zM28 22h1v1h-1zM0 23h1v1h-1zM6 23h1v1h-1zM9 23h1v1h-1zM11 23h1v1h-1zM12 23h1v1h-1zM13 23h1v1h-1zM14 23h1v1h-1zM17 23h1v1h-1zM18 23h1v1h-1zM20 23h1v1h-1zM24 23h1v1h-1zM25 23h1v1h-1zM27 23h1v1h-1zM0 24h1v1h-1zM2 24h1v1h-1zM3 24h1v1h-1zM4 24h1v1h-1zM6 24h1v1h-1zM8 24h1v1h-1zM9 24h1v1h-1zM10 24h1v1h-1zM11 24h1v1h-1zM14 24h1v1h-1zM17 24h1v1h-1zM18 24h1v1h-1zM20 24h1v1h-1zM21 24h1v1h-1zM22 24h1v1h-1zM23 24h1v1h-1zM24 24h1v1h-1zM28 24h1v1h-1zM0 25h1v1h-1zM2 25h1v1h-1zM3 25h1v1h-1zM4 25h1v1h-1zM6 25h1v1h-1zM10 25h1v1h-1zM11 25h1v1h-1zM14 25h1v1h-1zM16 25h1v1h-1zM23 25h1v1h-1zM24 25h1v1h-1zM26 25h1v1h-1zM27 25h1v1h-1zM28 25h1v1h-1zM0 26h1v1h-1zM2 26h1v1h-1zM3 26h1v1h-1zM4 26h1v1h-1zM6 26h1v1h-1zM8 26h1v1h-1zM9 26h1v1h-1zM10 26h1v1h-1zM12 26h1v1h-1zM14 26h1v1h-1zM17 26h1v1h-1zM19 26h1v1h-1zM20 26h1v1h-1zM23 26h1v1h-1zM24 26h1v1h-1zM25 26h1v1h-1zM28 26h1v1h-1zM0 27h1v1h-1zM6 27h1v1h-1zM9 27h1v1h-1zM11 27h1v1h-1zM12 27h1v1h-1zM14 27h1v1h-1zM16 27h1v1h-1zM17 27h1v1h-1zM19 27h1v1h-1zM20 27h1v1h-1zM22 27h1v1h-1zM23 27h1v1h-1zM24 27h1v1h-1zM27 27h1v1h-1zM0 28h1v1h-1zM1 28h1v1h-1zM2 28h1v1h-1zM3 28h1v1h-1zM4 28h1v1h-1zM5 28h1v1h-1zM6 28h1v1h-1zM8 28h1v1h-1zM13 28h1v1h-1zM14 28h1v1h-1zM15 28h1v1h-1zM16 28h1v1h-1zM17 28h1v1h-1zM19 28h1v1h-1zM20 28h1v1h-1zM22 28h1v1h-1zM23 28h1v1h-1zM27 28h1v1h-1zM28 28h1v1h-1z"/></svg>
+              <p class="qr-cap">nadiadileo.neocities.org</p>
+            </div>
+          </section>
+        </div>
+      </article>
+
+      <!-- ===== 14 REFERENCES ===== -->
+      <article class="page" id="p-refs">
+        <header class="pg-head"><h2 class="pg-title">REFERENCES</h2></header>
+        <div class="refs in">
+          <p>Abt, C. C. (1970). <i>Serious games</i>. Viking Press.</p>
+          <p>Barnett, L., Harvey, C., &amp; Gatzidis, C. (2018). First time user experiences in mobile games: An evaluation of usability. <i>Entertainment Computing, 27</i>, 82–88.</p>
+          <p>Creswell, J. W., &amp; Plano Clark, V. L. (2018). <i>Designing and conducting mixed methods research</i> (3rd ed.). SAGE.</p>
+          <p>Di Leo, N. (2026a). <i>A matter of accessibility: A guidelines-based accessibility evaluation of award-nominated video games</i> (manuscript under review).</p>
+          <p>Di Leo, N. (2026b). <i>The reception of Minecraft Education Edition in user reviews: An LLM-assisted thematic analysis</i> (manuscript submitted for publication).</p>
+          <p>Di Leo, N. (2026c). From feature to function. Rethinking videogame accessibility as distributed learning. <i>Journal of Inclusive Methodology and Technology in Learning and Teaching, 6</i>(1).</p>
+          <p>Di Leo, N., Rizzi, A., &amp; Traetta, L. (2025). Stressing out the ‘damsel in distress’: Intersectional shifts in women’s representation in video games. <i>Postdigital Science and Education, 8</i>, 113–139.</p>
+          <p>Di Leo, N., &amp; Tarantino, A. (2026). From checklists to playability: A systematic mapping of player reviews to the Game Accessibility Guidelines. In <i>Proceedings of DiGRA 2026</i>. Digital Games Research Association.</p>
+          <p>Di Leo, N., &amp; Traetta, L. (2025). Crafting knowledge block by block: A systematic review on the educational potential of Minecraft in schools. <i>Italian Journal of Educational Technology, 33</i>(1), 67–85.</p>
+          <p>Ellcessor, E. (2016). <i>Restricted access: Media, disability, and the politics of participation</i>. New York University Press.</p>
+          <p>Game Accessibility Guidelines. (2012). <i>Game accessibility guidelines: A straightforward reference for inclusive game design</i>. Retrieved September 29, 2026, from https://gameaccessibilityguidelines.com</p>
+          <p>Gee, J. P. (2003). What video games have to teach us about learning and literacy. <i>Computers in Entertainment (CIE), 1</i>(1), 20–20.</p>
+          <p>Habgood, M. P. J., &amp; Ainsworth, S. E. (2011). Motivating children to learn effectively: Exploring the value of intrinsic integration in educational games. <i>Journal of the Learning Sciences, 20</i>(2), 169–206.</p>
+          <p>Iskender, Ö. (2023). Identification with Game Characters: Theoretical Explanations, Predictors, and Psychological Outcomes. <i>Psikiyatride Guncel Yaklasimlar - Current Approaches in Psychiatry</i>.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- HUD -->
+    <button class="btn btn-sm hud-lib" type="button" data-act="library" title="Back to the library (M)"><svg class="ic ic-shelf"><use href="#i-shelf"/></svg> Library</button>
+    <nav class="minishelf" id="minishelf" aria-label="Lecture sections"></nav>
+    <div class="hud-nav">
+      <button class="btn btn-sm btn-icon" id="btn-prev" type="button" aria-label="Previous"><svg class="ic ic-flip"><use href="#i-arrow"/></svg></button>
+      <button class="btn btn-sm" id="btn-next" type="button"><span id="next-lbl">Next</span> <svg class="ic"><use href="#i-arrow"/></svg></button>
+    </div>
+  </section>
+
+  <!-- ============================== OVERLAYS ============================== -->
+  <div id="zoom-layer" aria-hidden="true"></div>
+
+  <section id="settings" class="win win-modal" role="dialog" aria-modal="true" aria-labelledby="set-title" style="--acc:var(--lilac)" hidden>
+    <div class="win-bar"><button class="win-close" type="button" aria-label="Close settings" data-act="settings-close"></button><h2 class="win-title" id="set-title">Settings</h2><i class="win-zoom"></i></div>
+    <div class="win-body">
+      <label class="set-row"><input type="checkbox" id="opt-motion"> <span>Reduce motion</span></label>
+      <table class="keys">
+        <tr><th>Right arrow, Space, Page Down</th><td>Next, or show the next figure</td></tr>
+        <tr><th>Left arrow, Page Up</th><td>Previous</td></tr>
+        <tr><th>Up and down arrows</th><td>Browse the shelf</td></tr>
+        <tr><th>M or Esc</th><td>Back to the library</td></tr>
+        <tr><th>F</th><td>Fullscreen</td></tr>
+        <tr><th>B</th><td>Black screen</td></tr>
+        <tr><th>S</th><td>These settings</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <div id="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden><img alt=""><button class="win-close lb-close" type="button" aria-label="Close"></button></div>
+  <canvas id="fx" aria-hidden="true"></canvas>
+</div>
+
+<div id="blackout" hidden></div>
+<p id="live" class="sr-only" aria-live="polite"></p>
+
+<script src="assets/js/data.js"></script>
+<script src="assets/js/app.js"></script>
+</body>
+</html>
