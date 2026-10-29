@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Who gets to play? Physical and conceptual accessibility in video games | accessible version</title>
+<meta name="description" content="Accessible web version of Nadia Di Leo's research poster on physical and conceptual accessibility in video games.">
+<link rel="canonical" href="https://nadiadileo.github.io/who-gets-to-play/kcl-poster/">
+<style>
+  :root { --ink:#2B2930; --grey:#57545E; --line:#C9C7CF;
+          --navy:#1B2F66; --navy-pale:#E8EBF4; --bord:#7D1D34; --bord-pale:#F6E9EC; }
+  body { margin:0; background:#fff; color:var(--ink); font:1.125rem/1.6 "Noto Sans", Verdana, Arial, sans-serif; }
+  main { max-width:46rem; margin:0 auto; padding:2rem 1rem 4rem; }
+  .skip { position:absolute; left:-999rem; }
+  .skip:focus { left:1rem; top:1rem; background:#fff; padding:.5rem 1rem; z-index:1; }
+  h1 { font-size:2.2rem; line-height:1.2; margin-bottom:.25rem; }
+  h2 { margin-top:2.75rem; line-height:1.3; }
+  h3 { margin-top:2rem; line-height:1.3; }
+  .sub { font-size:1.3rem; margin-top:0; color:var(--bord); }
+  .lead { background:var(--ink); color:#fff; padding:1rem 1.25rem; font-size:1.25rem; }
+  .physical h2, .physical h3 { color:var(--navy); }
+  .conceptual h2, .conceptual h3 { color:var(--bord); }
+  .box { padding:.25rem 1.25rem .75rem; }
+  .physical .box { background:var(--navy-pale); }
+  .conceptual .box { background:var(--bord-pale); }
+  .q { font-style:italic; font-size:1.2rem; margin-top:-.5rem; }
+  .source { color:var(--grey); font-size:1rem; margin:-.5rem 0 0; }
+  blockquote { background:var(--bord-pale); margin:1rem 0; padding:.75rem 1.25rem; color:var(--bord); }
+  blockquote p { font-style:italic; }
+  blockquote footer { color:var(--grey); font-size:1rem; }
+  .call { background:var(--bord); color:#fff; padding:.25rem 1.25rem 1rem; margin-top:2.5rem; }
+  .call h2 { color:#fff; margin-top:1rem; }
+  .call a { color:#fff; }
+  .kicker { text-transform:uppercase; letter-spacing:.06em; font-size:.95rem; font-weight:bold; margin-bottom:0; }
+  table { border-collapse:collapse; width:100%; margin:.75rem 0; font-size:1rem; }
+  th, td { border-bottom:1px solid var(--line); padding:.35rem .5rem; text-align:left; vertical-align:top; }
+  tbody th { font-weight:normal; }
+  td.num, th.num { text-align:right; }
+  caption { text-align:left; font-weight:bold; padding-bottom:.4rem; }
+  .note { color:var(--grey); font-size:1rem; }
+  .concl { background:#EDF1F3; padding:.25rem 1.25rem 1rem; margin-top:2.75rem; }
+  .concl h2 { margin-top:1rem; }
+  a { color:var(--navy); text-underline-offset:.15em; }
+  a:focus-visible { outline:3px solid var(--navy); outline-offset:2px; }
+  .call a:focus-visible { outline-color:#fff; }
+  ul.refs li { margin-bottom:.6rem; }
+</style>
+</head>
+<body>
+<a class="skip" href="#content">Skip to content</a>
+<main id="content">
+<header>
+  <h1>Who gets to play?</h1>
+  <p class="sub">Physical and conceptual accessibility in video games</p>
+  <p><strong>Nadia Di Leo</strong><br>
+  Doctoral researcher, University of Foggia<br>
+  Visiting researcher, King’s College London<br>
+  <a href="mailto:nadia.dileo@unifg.it">nadia.dileo@unifg.it</a>,
+  <a href="mailto:nadia.di_leo@kcl.ac.uk">nadia.di_leo@kcl.ac.uk</a></p>
+  <p>Accessible version of the poster submitted to the Arts &amp; Humanities PGR research poster
+  competition, King’s College London, November 2026.</p>
+</header>
+
+<p class="lead">Video games are a central part of contemporary culture, yet not everyone gets to play them on equal terms. My PhD project studies what keeps players out, both in how games are built and in the culture around them.</p>
+
+<!-- ===== Part 1 ===== -->
+<section class="physical" aria-labelledby="p1">
+<div class="box">
+<h2 id="p1">Physical accessibility</h2>
+<p class="q">Can you perceive and operate the game?</p>
+<p>A Deaf player needs subtitles; a player with limited hand movement may need to move actions to other buttons. Physical accessibility covers the features that decide whether someone can see, hear and control a game. It also covers cognitive load and difficulty settings.</p>
+<p>Both studies use the <strong>Game Accessibility Guidelines</strong> (GAG): around 120 checkable recommendations written by studios, accessibility specialists and researchers, in three levels:</p>
+<ul>
+<li><strong>Basic</strong>: <i>e.g. subtitles for all speech</i></li>
+<li><strong>Intermediate</strong>: <i>e.g. remapping every control</i></li>
+<li><strong>Advanced</strong>: <i>e.g. screen-reader support</i></li>
+</ul>
+</div>
+
+<h3>Study 1. What disabled players write about</h3>
+<p class="source">Di Leo &amp; Tarantino, <i>DiGRA 2026</i></p>
+<p><i>Can I Play That?</i> publishes accessibility reviews by disabled players. We matched 479 of them (2019–2025) against every guideline. Reviewers write mostly about basic features for hearing, movement and sight; advanced ones rarely appear, and twenty guidelines never come up.</p>
+
+<p>Figure 1 is a horizontal bar chart of the four guidelines discussed for the most games, out of 472: subtitles for all important speech (312), controls can be remapped (268), subtitles are clear and easy to read (253), nothing essential conveyed by sound alone (233).</p>
+<p class="note"><strong>Figure 1.</strong> The four guidelines discussed for the most games. Full bar = all 472 games reviewed.</p>
+<table>
+<caption>Data for figure 1</caption>
+<thead><tr><th scope="col">Guideline</th><th scope="col" class="num">Games (of 472)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Subtitles for all important speech</th><td class="num">312</td></tr>
+<tr><th scope="row">Controls can be remapped</th><td class="num">268</td></tr>
+<tr><th scope="row">Subtitles are clear and easy to read</th><td class="num">253</td></tr>
+<tr><th scope="row">Nothing essential conveyed by sound alone</th><td class="num">233</td></tr>
+</tbody>
+</table>
+
+<h3>Study 2. Testing the award nominees</h3>
+<p class="source">Di Leo, <i>Games and Culture</i>, in press</p>
+<p>The Game Awards gives a prize for Innovation in Accessibility. With a second evaluator, I played the first hour of each 2025 nominee (First-Time User Experience) and checked all 121 guidelines. All five did well, but fewer are met as the guidelines get harder:</p>
+<ul>
+<li><strong>95.1%</strong> <strong>Basic</strong> guidelines</li>
+<li><strong>83.7%</strong> <strong>Intermediate</strong> guidelines</li>
+<li><strong>51.8%</strong> <strong>Advanced</strong> guidelines</li>
+</ul>
+<p>Blind players are left furthest behind: screen readers and audio description were rare. Studios’ own pages describe fewer than half of the applicable guidelines, and the award went to <i>DOOM: The Dark Ages</i>, third in our audit.</p>
+
+<p>Figure 2 is a bar chart with two bars per game: the share of applicable guidelines implemented in play, and the share described on official pages. The games implement 74.5% to 84.2% of applicable guidelines in play, while their official pages describe 25.5% to 48.6%. The award winner, <i>DOOM: The Dark Ages</i>, is marked with a trophy.</p>
+<p class="note"><strong>Figure 2.</strong> Applicable guidelines met in play and described on official pages (trophy: award winner).</p>
+<table>
+<caption>Data for figure 2 (percentage of applicable guidelines)</caption>
+<thead><tr><th scope="col">Game</th><th scope="col" class="num">Implemented in play</th><th scope="col" class="num">Described on official pages</th></tr></thead>
+<tbody>
+<tr><th scope="row"><i>South of Midnight</i></th><td class="num">84.2%</td><td class="num">25.5%</td></tr>
+<tr><th scope="row"><i>Atomfall</i></th><td class="num">83.0%</td><td class="num">31.0%</td></tr>
+<tr><th scope="row"><i>DOOM: The Dark Ages</i> (award winner)</th><td class="num">80.7%</td><td class="num">40.6%</td></tr>
+<tr><th scope="row"><i>Assassin’s Creed Shadows</i></th><td class="num">77.0%</td><td class="num">26.5%</td></tr>
+<tr><th scope="row"><i>EA Sports FC 26</i></th><td class="num">74.5%</td><td class="num">48.6%</td></tr>
+</tbody>
+</table>
+</section>
+
+<!-- ===== Part 2 ===== -->
+<section class="conceptual" aria-labelledby="p2">
+<div class="box">
+<h2 id="p2">Conceptual accessibility</h2>
+<p class="q">Does the game, and its culture, make room for you?</p>
+<p>A game can offer every setting and still push people away, through characters that reduce women to stereotypes or online spaces where players are harassed for who they are. Conceptual accessibility asks whether players can recognise themselves in a game and take part safely in its community.</p>
+</div>
+
+<h3>Study 3. Stressing out the “damsel in distress”</h3>
+<p class="source">Di Leo, Rizzi &amp; Traetta, <i>Postdigital Science and Education</i>, 2025</p>
+<p>For decades, many games cast women as the “damsel in distress”, who exists only to be rescued by the hero. We interviewed 19 Italian gamers (6 women, 13 men, aged 13 to 39) and read their answers through <strong>postdigital feminism</strong>, which treats online and offline life as one and asks how platforms reproduce social prejudice. We looked at three levels:</p>
+<ul>
+<li><strong>Representation.</strong> Participants see fewer hypersexualised women and more complex heroes like Samus Aran and Aloy, yet named mostly men as favourites.</li>
+<li><strong>Infrastructures.</strong> Voice chat that is on by default exposes women to harassment, so many mute the microphone or pick a male nickname.</li>
+<li><strong>Practices.</strong> Complaints about “forced representation” sat beside praise for subtle portrayals (<i>Celeste</i>) and calls for more diverse development teams.</li>
+</ul>
+<blockquote><p>“Boys pretend to be girls to receive positive attention from men, while girls pretend to be boys to avoid it.”</p><footer>Participant 11</footer></blockquote>
+
+<p>Figure 3 is a horizontal bar chart of the 8 most frequent patterns, from most to least frequent, out of 19 participants. The counts range from 15 to 11; the full list is in the table below.</p>
+<p class="note"><strong>Figure 3.</strong> The 8 most frequent of 22 patterns, by number of participants. Full bar = all 19.</p>
+<table>
+<caption>Data for figure 3</caption>
+<thead><tr><th scope="col">Pattern</th><th scope="col" class="num">Participants (of 19)</th></tr></thead>
+<tbody>
+<tr><th scope="row">Identity affects how you are treated in game</th><td class="num">15</td></tr>
+<tr><th scope="row">Appreciation for strong, varied female leads</th><td class="num">14</td></tr>
+<tr><th scope="row">From hypersexualised to more nuanced women</th><td class="num">13</td></tr>
+<tr><th scope="row">Toxicity grows with competition and voice chat</th><td class="num">12</td></tr>
+<tr><th scope="row">Social media amplify misogyny and activism</th><td class="num">12</td></tr>
+<tr><th scope="row">Favourite characters chosen for ideals, not gender</th><td class="num">11</td></tr>
+<tr><th scope="row">Backlash against “woke” choices; sales often stable</th><td class="num">11</td></tr>
+<tr><th scope="row">More female leads and roles, villains included</th><td class="num">11</td></tr>
+</tbody>
+</table>
+
+<div class="call">
+<p class="kicker">Now recruiting at King’s</p>
+<h2>Take part in my new interview study</h2>
+<p>I am interviewing players, game developers, educators and researchers about character representation, safety in multiplayer games and who takes part in gaming communities. Interviews last 30–45 minutes, online or in London.</p>
+<p><a href="https://forms.gle/mTSmyEnknP4ZC8CX7">Take part: screening form</a><br>
+<a href="mailto:nadia.di_leo@kcl.ac.uk">nadia.di_leo@kcl.ac.uk</a></p>
+</div>
+</section>
+
+<section class="concl" aria-labelledby="concl">
+<h2 id="concl">What connects the studies</h2>
+<p>Accessibility is negotiated across policy, technology and everyday practice (Ellcessor 2016). In these studies, a settings menu, a studio’s accessibility page and a voice-chat default all shape who gets to play. Checklists show which features are missing; reviews and interviews show who is left out.</p>
+<h3>Next step</h3>
+<p>Using these results to draft accessibility guidelines for games used in education.</p>
+</section>
+
+<h2>Key references</h2>
+<ul class="refs">
+<li>Di Leo, N. (in press). A matter of accessibility: A guidelines-based accessibility evaluation of award-nominated video games. <i>Games and Culture</i>.</li>
+<li>Di Leo, N., &amp; Tarantino, A. (2026). From checklists to playability: A systematic mapping of player reviews to the Game Accessibility Guidelines. <i>Proceedings of DiGRA 2026</i>.</li>
+<li>Di Leo, N., Rizzi, A., &amp; Traetta, L. (2025). Stressing out the ‘damsel in distress’: Intersectional shifts in women’s representation in video games. <i>Postdigital Science and Education, 8</i>, 113–139. <a href="https://doi.org/10.1007/s42438-025-00607-3">https://doi.org/10.1007/s42438-025-00607-3</a></li>
+<li>Ellcessor, E. (2016). <i>Restricted access: Media, disability, and the politics of participation</i>. NYU Press.</li>
+<li>Ellis, B., et al. (2012). <i>Game accessibility guidelines</i>. <a href="https://gameaccessibilityguidelines.com">gameaccessibilityguidelines.com</a></li>
+<li>Hurley, Z. (2023). Postdigital feminism(s). In P. Jandrić (Ed.), <i>Encyclopaedia of postdigital science and education</i>. Springer.</li>
+</ul>
+
+<p class="note">The printed poster has three QR codes. “Scan to take part” links to the screening form for the interview study,
+<a href="https://forms.gle/mTSmyEnknP4ZC8CX7">https://forms.gle/mTSmyEnknP4ZC8CX7</a>; “Accessible version” links to this page,
+<a href="https://nadiadileo.github.io/who-gets-to-play/kcl-poster">https://nadiadileo.github.io/who-gets-to-play/kcl-poster</a>; “My website” links to
+<a href="https://nadiadileo.neocities.org">https://nadiadileo.neocities.org</a>. The header carries the logos of the
+<span lang="it">Università di Foggia</span> and King’s College London. Small pixel-art icons (a game controller, two players,
+a trophy and a speech bubble) are decorative.</p>
+</main>
+</body>
+</html>
