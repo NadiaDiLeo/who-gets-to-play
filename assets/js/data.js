@@ -95,11 +95,11 @@ WG.spines = {
   refs:        { file: 'manual.png' }
 };
 
-/* Award nominees, Di Leo (2026a). Values from the chart on the original slide 8. */
+/* Award nominees, Di Leo (2026a). Values from Table 1 of the final article (Games revision 2). */
 WG.awards = [
-  { id: 'ac',   name: 'Assassin’s Creed Shadows', impl: 77.0, doc: 26.5, img: 'heat-ac-shadows.png' },
+  { id: 'ac',   name: 'Assassin’s Creed Shadows', impl: 77.7, doc: 26.7, img: 'heat-ac-shadows.png' },
   { id: 'atom', name: 'Atomfall',                 impl: 83.0, doc: 31.0, img: 'heat-atomfall.png' },
-  { id: 'doom', name: 'DOOM: The Dark Ages',      impl: 79.7, doc: 40.6, img: 'heat-doom.png', tag: 'Award winner' },
+  { id: 'doom', name: 'DOOM: The Dark Ages',      impl: 80.7, doc: 40.6, img: 'heat-doom.png', tag: 'Award winner' },
   { id: 'fc',   name: 'EA Sports FC 26',          impl: 74.5, doc: 48.6, img: 'heat-fc26.png' },
-  { id: 'som',  name: 'South of Midnight',        impl: 83.2, doc: 25.5, img: 'heat-south-of-midnight.png', tag: 'First in my audit' }
+  { id: 'som',  name: 'South of Midnight',        impl: 84.2, doc: 25.5, img: 'heat-south-of-midnight.png', tag: 'First in my audit' }
 ];
